@@ -13,6 +13,13 @@
   top: 15px;
   height: calc(100vh - 30px);
   width: 230px;
+  background-color: #20202a;
+  transition:width 0.6s ease-in-out;
+
+}
+.header-box.hid{
+  width:80px;
+  transition:width 0.6s ease-in-out;
 }
 .sidebar-container {
   position: fixed;
@@ -120,4 +127,60 @@ hr {
   width:0%;
   background-color:#FFC107;
   transition:width 1.2s linear;
+}
+.header-toggle{
+  background: linear-gradient(159deg,rgba(37,37,50,.98) 0%,rgba(35,35,45,.98) 100%);;
+  height:70px;
+  width: 100%;
+}
+.header-toggle-wrap{
+  height:100%;
+  width: 80px;
+}
+.header-toggle-wrap:hover{
+  cursor: pointer;
+}
+.header-toggle-wrap:hover .header-toggle-item{
+  background-color:white;
+  transition:all 0.3s
+}
+.header-toggle-wrap .header-toggle-item{
+  height:3px;
+  width:15px;
+  background-color:#8c8c8e;
+  transition:all 0.3s;
+}
+.header-toggle-wrap.open .header-toggle-item1{
+  transform: rotate(45deg) translateY(7px);
+}
+.header-toggle-wrap.open .header-toggle-item2{
+  opacity: 0;
+}
+.header-toggle-wrap.open .header-toggle-item3{
+  transform: rotate(-45deg) translateY(-7px);
+}
+.header-list{
+  color: #8c8c8e;
+  font-weight: 500;
+  height:calc(100vh - 100px);
+  font-size: 13px;
+  width:100%;
+  overflow-x: hidden;
+}
+.header-list li{
+  opacity: 1;
+  width:100%;
+  white-space: nowrap;
+  transform:translateX(0px);
+  transition: all 0.3s ease-in-out;
+}
+.header-list li span:hover{
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  
+}
+.header-box.hid li{
+  transform:translateX(70px);
+  opacity: 0;
 }
