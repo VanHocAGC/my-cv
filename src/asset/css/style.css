@@ -108,3 +108,16 @@
 hr {
   border-top: 1px solid #555555;
 }
+.line-process-bar-content{
+  height:4px;
+  background-color:#191923;
+  position:relative;
+}
+.line-process-bar-content span {
+  content:"";
+  position:absolute;
+  height:100%;
+  width:0%;
+  background-color:#FFC107;
+  transition:width 1.2s linear;
+}

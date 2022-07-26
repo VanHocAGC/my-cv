@@ -1,11 +1,13 @@
 import Facebook from "asset/icon/facebook";
 import Github from "asset/icon/github";
 import Instagram from "asset/icon/instagram";
-import { CircularProgressbar } from "react-circular-progressbar";
+import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import React from "react";
-import { easeQuadInOut } from "d3-ease";
+import { easeQuadInOut, easeLinear, easeCubicInOut } from "d3-ease";
 import AnimatedProgressProvider from "./AnimatedProgressProvider";
+import LineProcessBar from "./lineProcessBar";
+import Check from "asset/icon/check";
 
 function SideBar(props) {
   const percentage = 50;
@@ -17,7 +19,7 @@ function SideBar(props) {
           <div className="bg-yellow-300 absolute rounded-full online-sign"></div>
         </div>
         <div className="py-2 text-lg font-semibold name"> Văn Học</div>
-        <div className="text-sm text-stone-400 position">
+        <div className="text-sm text-zinc-400 position">
           Front-end Developer
         </div>
       </div>
@@ -39,21 +41,91 @@ function SideBar(props) {
           </div>
         </div>
         <hr />
-        <div className="py-4 bg-orange-400 language">
-          <AnimatedProgressProvider
-            valueStart={0}
-            valueEnd={66}
-            duration={1.4}
-            easingFunction={easeQuadInOut}
-          >
-            {(value) => {
-              console.log(value);
-              const roundedValue = Math.round(value);
-              return (
-                <CircularProgressbar value={value} text={`${roundedValue}%`} />
-              );
-            }}
-          </AnimatedProgressProvider>
+        <div className="p-4 space-x-8 flex items-center justify-center language">
+          <div>
+            <AnimatedProgressProvider
+              valueStart={0}
+              valueEnd={66}
+              duration={1.4}
+              easingFunction={easeQuadInOut}
+            >
+              {(value) => {
+                const roundedValue = Math.round(value);
+                return (
+                  <CircularProgressbar
+                    value={value}
+                    text={`${roundedValue}%`}
+                    styles={buildStyles({
+                      pathTransition: "none",
+                      textColor: "white",
+                      pathColor: "#FFC107",
+                      trailColor: "#191923",
+                    })}
+                  />
+                );
+              }}
+            </AnimatedProgressProvider>
+            <p className="pt-2 text-center">English</p>
+          </div>
+          <div>
+            <AnimatedProgressProvider
+              valueStart={0}
+              valueEnd={66}
+              duration={1.4}
+              easingFunction={easeQuadInOut}
+            >
+              {(value) => {
+                const roundedValue = Math.round(value);
+                return (
+                  <CircularProgressbar
+                    value={value}
+                    text={`${roundedValue}%`}
+                    styles={buildStyles({
+                      pathTransition: "none",
+                      textColor: "white",
+                      pathColor: "#FFC107",
+                      trailColor: "#191923",
+                    })}
+                  />
+                );
+              }}
+            </AnimatedProgressProvider>
+            <p className="pt-2 text-center">English</p>
+          </div>
+        </div>
+        <hr />
+        <div className="py-6 space-y-4 w-100 code-language">
+          <div className="w-100">
+            <LineProcessBar name="html" percent={90} />
+          </div>
+          <div className="w-100">
+            <LineProcessBar name="css" percent={95} />
+          </div>
+          <div className="w-100">
+            <LineProcessBar name="javascript" percent={75} />
+          </div>
+          <div className="w-100">
+            <LineProcessBar name="java" percent={70} />
+          </div>
+        </div>
+        <hr />
+        <div className="py-4 space-y-1 w-100 framework-library">
+          <div className="flex items-center">
+            <Check color="#FFC107" />
+            <span className="pl-2 text-zinc-500">React, Redux, Saga, Vue</span>
+          </div>
+          <div className="flex items-center">
+            <Check color="#FFC107" />
+            <span className="pl-2 text-zinc-500">Bootstrap, Tailwind, MUI, antd</span>
+          </div>
+          <div className="flex items-center">
+            <Check color="#FFC107" />
+            <span className="pl-2 text-zinc-500">Sass, Css module,</span>
+          </div>
+          <div className="flex items-center">
+            <Check color="#FFC107" />
+            <span className="pl-2 text-zinc-500">Git knowledge</span>
+          </div>
         </div>
         <hr />
       </div>
