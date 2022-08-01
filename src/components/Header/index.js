@@ -23,7 +23,8 @@ function Header(props) {
           <li style={{transitionDelay: "0.15s"}}><span>Home</span></li>
           <li style={{transitionDelay: "0.2s"}}><span>Language & framework</span></li>
           <li style={{transitionDelay: "0.25s"}}><span>Experience</span></li>
-          <li style={{transitionDelay: "0.3s"}}><span>Contact</span></li>
+          <li style={{transitionDelay: "0.3s"}}><span>Project</span></li>
+          <li style={{transitionDelay: "0.35s"}}><span>Contact</span></li>
         </ul>
       </div>
     </div>

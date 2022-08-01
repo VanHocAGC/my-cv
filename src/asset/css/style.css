@@ -3,14 +3,18 @@
   height: 100vh;
   position: relative;
   padding: 15px;
+  display:flex;
+  justify-content:center;
 }
 .layout-inner {
   position: relative;
+  max-width: 1440px;
+  width:100%;
 }
 .header-box {
-  position: fixed;
-  right: 15px;
-  top: 15px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
   height: calc(100vh - 30px);
   width: 230px;
   background-color: #20202a;
@@ -22,11 +26,11 @@
   transition:width 0.6s ease-in-out;
 }
 .sidebar-container {
-  position: fixed;
+  position: absolute;
   height: calc(100vh - 30px);
   width: 290px;
-  top: 15px;
-  left: 15px;
+  top: 0px;
+  left: 0px;
   z-index: 99;
   background-color: #20202a;
 }
@@ -183,4 +187,53 @@ hr {
 .header-box.hid li{
   transform:translateX(70px);
   opacity: 0;
+}
+.content-wrap{
+  padding: 0px 80px 0px 290px;
+  background-color:#1E1E28;
+  height:100%;
+  overflow-y: auto;
+}
+.background-wrap{
+  height:400px;
+  background:linear-gradient(0deg, #1E1E28, rgba(20, 22, 31, 0.8)), url('../images/bg.jpg');
+  background-size:auto;
+  background-position: 60% 40%;
+}
+.trailer-wrap{
+  width:90%;
+  padding: 40px;
+  background: linear-gradient(90deg,rgba(45,45,58,.9) 15%,rgba(45,45,58,.7) 50%,rgba(43,43,53,.7) 100%), url('../images/bg.jpg');
+  background-size:cover;
+  background-position: 80% 40%;
+  margin-top: 50px;
+  transition:all 0.3s ease-in-out;
+  padding-right: 30%;
+}
+.trailer-wrap h3{
+  font-size: 2.5rem;
+  line-height:100%;
+}
+.typical-trailer .auto-typical-wrap{
+  color: #F9BD08;
+}
+.typical-trailer .auto-typical-wrap svg{
+  color: white;
+  font-weight:600;
+  width:8px;
+  fill:white;
+}
+.typical-trailer p{
+  color: white ;
+  font-weight:600;
+  word-spacing: 3px;
+  letter-spacing: 2px;
+  padding: 0px 5px;
+}
+.trailer-wrap button{
+  padding: 14px 38px;
+  background-color: #FFC107;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing: 1.2px;
 }

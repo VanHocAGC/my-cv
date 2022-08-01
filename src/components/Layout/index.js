@@ -1,4 +1,5 @@
 import Header from "components/Header";
+import Content from "components/Maincontent";
 import SideBar from "components/SideBar";
 import React,{useState} from "react";
 
@@ -9,9 +10,10 @@ function Layout(props) {
   }
   return (
     <div className="layout-container">
-      <div className="h-full w-100 bg-sky-200 layout-inner">
+      <div className="h-full w-100 layout-inner">
         <Header isOpen={isOpen} onClickToggle={toggleTrigger}/>
         <SideBar />
+        <Content />
       </div>
     </div>
   );
