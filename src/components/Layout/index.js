@@ -13,7 +13,7 @@ function Layout(props) {
       <div className="h-full w-100 layout-inner">
         <Header isOpen={isOpen} onClickToggle={toggleTrigger}/>
         <SideBar />
-        <Content />
+        <Content isShowSideBar={isOpen}/>
       </div>
     </div>
   );
